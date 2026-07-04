@@ -27,15 +27,17 @@ int main(){
 
 //O(log n)= input size decrease repeatedly
 //linear  search 
-/*  #include<iostream>
-using namespace std;
-int main(){
-int a[5]={3,2,4,5,7};
-int n;
-int i ; 
-bool res;
-cout<<"enter n:"<<endl;
-cin>>n;
+
+/*  #include<iostream>                       //   LINEAR SEARCH:- 
+using namespace std;                         //1. START
+int main(){                                  //2. intialize an array of size n and bool res
+int a[5]={3,2,4,5,7};                        //3. read input n
+int n;                                       //4.  loop starts 
+                                                    // if arr[i] =n if yes then res = true and break the loop
+int i ;                                      //5.  else res=false
+bool res;                                    // 6. loop breaks apply condition if res=true,
+cout<<"enter n:"<<endl;                      //print that the element found at i index
+cin>>n;                                      // 7. else  print that element not found 
 for(i=0;i<5;i++){
     if(a[i]==n){
         res= true;

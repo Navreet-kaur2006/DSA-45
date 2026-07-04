@@ -43,18 +43,19 @@ int main(){
 
 
 
-/*  
-#include<iostream>
-using namespace std;
-
-int binary(int n){
-    if (n==mid){
-        return mid;
-    }
-    elseif(n<mid){
-       return z=mid-1;
-        
-    }
+/*  binary search
+                                
+#include<iostream>                       //    ALGO:- BINARY SEARCH
+using namespace std;                     //1. declare a function named binary(int n). 
+                                         // 2. apply if condition within that function that if n=mid then return mid.
+int binary(int n){                       //3.  elseif n<mid then return end = mid-1
+    if (n==mid){                         //4.  else return start= mid+1
+        return mid;                      // 5. then in int main,
+    }                                    //6. declare an array , initialize start and end.
+    elseif(n<mid){                       //7.then initialize mid=start +end/2
+       return z=mid-1;                   //8. then apply a for loop to call the function
+                                         // 9.then print the index where particular element is found according to your input
+    }                                    // 10. stop
     else{
         return a=mid+1;
     }
