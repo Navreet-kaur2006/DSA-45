@@ -49,7 +49,7 @@ int main(){                                                                     
 
 /* #include<iostream>                                      // Merge sort
 using namespace std;
-
+                                                                      // tc = O(nlogn)
 void merge(int arr[],int start,int mid,int end){
     int n1=mid-start+1;
     int n2=end-mid;
@@ -135,4 +135,28 @@ int main()
 */
 
 
+// INSERTION SORT
+ #include<iostream>
+using namespace std;
 
+void insert(int arr[], int n){
+    for(int i=1;i<n;i++){
+        int key=arr[i];
+        int j= i-1;
+        while(j>=0 && arr[j]>key){
+         arr[j+1]=arr[j];
+        j--;
+    }
+        arr[j+1]=key;
+        }
+    }
+
+int main(){
+    int arr[5]={38,27,66,12,73};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    insert(arr,n);
+
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
+}   
