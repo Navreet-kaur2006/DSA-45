@@ -1,4 +1,4 @@
-/*  #include<iostream>
+/* #include<iostream>
 #include<vector>
 using namespace std;
 
@@ -40,16 +40,18 @@ int main(){
     obj.push(5);
     obj.push(7);
     obj.push(9);
+    obj.pop();
+    obj.pop();
     
     obj.printstack();
 
-    obj.pop();
+   
 
     
 } */
 
 
-/*  #include<iostream>                 // stack using linkedlist
+/*  #include<iostream>                   // stack using linkedlist
 #include<list>
 using namespace std;
 
@@ -95,10 +97,10 @@ int main(){
     obj.print();
 
 
-}
-    */
+}  */
+    
 
-    #include<iostream>
+  #include<iostream>                           //STACK USING ARRAY
     #include<array>
     using namespace std;
 
@@ -152,4 +154,4 @@ int main(){
         obj.print();
 
 
-    }
+    }     

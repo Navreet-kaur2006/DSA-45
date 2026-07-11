@@ -262,7 +262,7 @@ int main(){
 
    //DOUBLY LINKED LIST
 
- #include<iostream>
+/* #include<iostream>
 #include<vector>                                             
 using namespace std;                        
 
@@ -357,6 +357,115 @@ int main(){
    
    vector<int>nums;
    doublylinkedlist ll;
+
+   ll.push_front(4);
+   ll.push_front(6);
+   ll.push_front(8);
+   ll.print_LL();       
+   
+
+}
+*/
+
+
+// circular linkedlist
+#include<iostream>
+#include<vector>                                             
+using namespace std;                        
+
+class Node{                // to create node
+   public:
+    int data;
+   Node* next;                  // store address of previous  node
+   Node* prev;                 // store address of next node
+  
+   Node(int val){
+    data=val;
+    prev=NULL;
+    next=NULL;
+   }
+
+
+};
+
+class circularlinkedlist{  
+    public:            // to  create linked list
+    Node* head;
+    Node* tail;
+   Node* prev;
+  
+
+    Linkedlist(){
+
+        head=NULL;
+        tail=NULL;
+        
+    
+
+    }
+
+   void push_front(int val){
+            Node* newNode = new Node(val);    // for new node
+
+    if(head==NULL && tail==NULL){
+        tail=head=newNode;
+        }
+        else{
+            newNode->next=head;
+            newNode->prev=NULL;
+            head->prev=newNode;
+            head=newNode;
+        }
+
+    }
+
+
+
+
+    void push_back(int val){
+
+        Node* newNode = new Node(val); 
+
+    if(head==NULL && tail==NULL){
+        tail=head=newNode;
+        }
+        else{
+
+            tail->next = newNode;
+            newNode=NULL;
+            tail->prev=NULL;
+            tail=newNode; 
+            prev->next=head;
+
+        }
+
+
+
+
+    } 
+
+
+    void print_LL(){
+        Node* temp=head;
+        while(temp !=NULL){
+            cout<<temp->data<<"-> ";
+            temp=temp->next;
+        }
+        cout<<"NULL"<<endl;
+
+    
+    }
+
+
+};
+
+
+
+
+int main(){
+   
+   vector<int>nums;
+  circularlinkedlist ll;
 
    ll.push_front(4);
    ll.push_front(6);
