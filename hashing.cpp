@@ -1,12 +1,5 @@
-#include<iostream>
+#include<iostream>                                //hashing
 using namespace std;
-
-class hash{
-    public:
-
-
-
-};
 
 int main(){
     int size=10;
