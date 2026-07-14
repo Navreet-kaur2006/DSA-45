@@ -35,7 +35,7 @@ int main(){
     obj.push(7);
     obj.push(8);
 
-   // obj.pop();
+   obj.pop();
 
     obj.print();
 }

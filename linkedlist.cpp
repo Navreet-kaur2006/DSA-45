@@ -1,6 +1,6 @@
 //LINKED LIST
 
- /* #include<iostream>
+#include<iostream>
 #include<vector>                       // only pushfront 
 using namespace std;
 
@@ -47,6 +47,51 @@ class Linkedlist{
 
     }
 
+    bool empty(){                                               // to search an element in list
+        if(head==NULL && tail ==NULL){
+            return true; 
+        }else{
+            return false; 
+        }
+    }
+     void search(int target){
+        Node* temp = head ; 
+        bool result = false; 
+        while(temp !=NULL){
+            if(temp->data == target){
+                cout<<" element found ";
+                result= true; 
+                break; 
+            }
+            temp= temp->next ; 
+        }
+        if(result == false){
+            cout<<"elemnet is not in list "; 
+        }
+
+     }
+
+     void sort(){
+
+        Node* temp1=head;
+        Node* temp2=head;
+
+        while(temp1!=NULL){
+            while(temp2 !=NULL){
+                if(temp2->data > temp2->next->data){
+                    swap(temp2->data , temp2->next->data);
+                }
+                else{
+                    temp2=temp2->next;
+                }
+            }
+            temp1=temp1->next;
+        }
+     }
+
+    
+
+
     void print_LL(){
         Node* temp=head;
         while(temp !=NULL){
@@ -57,28 +102,36 @@ class Linkedlist{
 
     
     }
-
-
 };
+
+
 
 
 
 
 int main(){
    
-   vector<int>nums;
    Linkedlist ll;
 
    ll.push_front(6);
    ll.push_front(8);
    ll.push_front(9);
    ll.push_front(10);
-
-   ll.print_LL();       
+   ll.push_front(1);
+   ll.push_front(18);
    
 
+   ll.print_LL();   
+   
+   //ll.search(1);
+   ll.sort();
+
+   ll.print_LL();  
+
+
+
+
 }
- */  
 
 
 
@@ -369,7 +422,7 @@ int main(){
 
 
 // circular linkedlist
-#include<iostream>
+/* #include<iostream>
 #include<vector>                                             
 using namespace std;                        
 
@@ -473,4 +526,4 @@ int main(){
    ll.print_LL();       
    
 
-}
+}  */
