@@ -34,6 +34,58 @@ class binarytree{
         }
     }
 
+
+    int  countNodes(Node* root){
+
+        if(root==NULL){
+            return 0;
+        }
+        int leftNodes=countNodes(root->left);
+        int rightNodes=countNodes(root->right);
+        return leftNodes+rightNodes+1;
+    }
+
+
+    bool search(Node* root , int key){
+        if(root==NULL){
+            return false;
+        }
+        if(root->data==key){
+            return true;
+        }
+
+        return search(root->left,key) || search(root->right,key);     // search ala code dubara chla left vste ya right vste
+
+
+
+    }
+    
+    void deleteDeepestNode(Node* root,Node* dNode){
+        queue<Node*>q;
+
+        q.push(root);
+
+        Node* temp=q.front();
+        q.pop();
+        if(temp->left){
+            if(temp->left==dNode){
+            delete temp->left;
+            temp->left=NULL;
+        }
+        }
+
+
+
+        if(temp->right){
+            if(temp->right==dNode){
+            delete temp->right;
+            temp->right=NULL;
+        }
+        }
+
+        q.push(temp->right);
+    }
+    
     void preorder(Node* root){
 
 
